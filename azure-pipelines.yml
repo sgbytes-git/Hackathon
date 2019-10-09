@@ -1,0 +1,22 @@
+trigger:
+- service1
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  imageName: 'hack-svc1-docker' 
+  dockerfilePath: Dockerfile
+  dockerRegistryServiceConnection: sgbytesAzureConatinerRegistry
+  tag: latest
+
+steps:
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageName)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
