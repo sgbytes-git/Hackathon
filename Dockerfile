@@ -14,4 +14,4 @@ EXPOSE 5000
 ENV PYTHONIOENCODING=utf-8
 
 ENV GUNICORN_CMD_ARGS="--bind 0.0.0.0:5000 --workers=2"
-CMD ["gunicorn","runserver:app"]
+CMD ["gunicorn","application:app"]
