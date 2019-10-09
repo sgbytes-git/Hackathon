@@ -7,7 +7,7 @@ pool:
 variables:
   imageName: 'hack-ui-docker' 
   dockerfilePath: Dockerfile
-  dockerRegistryServiceConnection: sgbytesAzureConatinerRegistry
+  dockerRegistryServiceConnection: kerbclanconreg
   tag: latest
 
 steps:
